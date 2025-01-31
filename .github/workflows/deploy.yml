@@ -1,9 +1,10 @@
-name: Deploy Docker Image on Server
+name: Deploy
 
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_run:
+    workflows: [ "Build" ]
+    types:
+      - completed
 
 jobs:
   deploy:
