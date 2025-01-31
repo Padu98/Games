@@ -1,7 +1,7 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:23-jdk-slim
 
 WORKDIR /app
 
-COPY target/my-api-0.0.1-SNAPSHOT.jar /app/my-api.jar
+COPY target/games-0.0.1-SNAPSHOT.jar /app/games.jar
 
-ENTRYPOINT ["java", "-jar", "my-api.jar"]
+ENTRYPOINT ["java", "-jar", "games.jar"]
