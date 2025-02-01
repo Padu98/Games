@@ -5,8 +5,6 @@ on:
     workflows: ["Deploy"]
     types:
       - completed
-    branches:
-      - main
 
 jobs:
   delete-branch:
