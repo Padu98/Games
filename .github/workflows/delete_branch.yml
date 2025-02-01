@@ -1,8 +1,10 @@
 name: Cleanup Merged Branch
 
 on:
-  pull_request:
-    types: [closed]
+  workflow_run:
+    workflows: ["Deploy"]
+    types:
+      - completed
     branches:
       - main
 
