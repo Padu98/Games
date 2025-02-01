@@ -6,11 +6,6 @@ on:
       - closed
     branches:
       - main
-  #workflow_run:
-  #  workflows: [ "Build" ]
-  #  types:
-  #    - completed
-
 jobs:
   deploy:
     name: Deploy on Server
