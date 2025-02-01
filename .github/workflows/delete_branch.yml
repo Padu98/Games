@@ -1,4 +1,5 @@
-name: Delete Branch
+name: Cleanup Merged Branch
+
 on:
   pull_request:
     types: [closed]
@@ -7,9 +8,11 @@ on:
 
 jobs:
   delete-branch:
+    name: Delete merged branch
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
-      - name: delete branch
-        uses: SvanBoxel/delete-merged-branch@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_DELETE_BRANCH_SECRET }}
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{ secrets.REPO_DELETE_BRANCH_SECRET }}
