@@ -10,4 +10,5 @@ public class GamesApplication {
 		SpringApplication.run(GamesApplication.class, args);
 	}
 
+	//test comment for testing the pipelines
 }
